@@ -1,5 +1,7 @@
 let grid = document.querySelector(".products")
 
+let filterInput = document.getElementById("filterinput");
+
 // https://fakestoreapi.com/products/
 
 fetch("https://fakestoreapi.com/products")
@@ -12,6 +14,16 @@ fetch("https://fakestoreapi.com/products")
 
     // console.log(json);
   );
+
+// **** Add Event Listener ****
+filterInput.addEventListener("keyup",filterProducts);
+
+// ***** Callbackfunction *****
+
+function filterProducts(){
+  let filterValue = filterInput.value;
+  console.log(filterValue); 
+}
 
 // get value from the api & create dynamic element
 
